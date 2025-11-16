@@ -1,7 +1,12 @@
 import { Pill } from "lucide-react";
 import { Button } from "./ui/button";
+import { useSiteConfig } from "@/hooks/useSiteConfig";
 
 const Header = () => {
+  const { config } = useSiteConfig();
+  
+  if (!config) return null;
+  
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
@@ -9,7 +14,7 @@ const Header = () => {
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
             <Pill className="h-6 w-6 text-primary-foreground" />
           </div>
-          <span className="text-xl font-bold text-primary">FarmaVida</span>
+          <span className="text-xl font-bold text-primary">{config.site.name}</span>
         </div>
         
         <nav className="hidden md:flex items-center gap-8">

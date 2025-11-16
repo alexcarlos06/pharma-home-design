@@ -1,4 +1,5 @@
 import { Shield, Clock, Users } from "lucide-react";
+import { useSiteConfig } from "@/hooks/useSiteConfig";
 
 const features = [
   {
@@ -19,34 +20,23 @@ const features = [
 ];
 
 const About = () => {
+  const { config } = useSiteConfig();
+  
+  if (!config) return null;
+
   return (
     <section id="servicos" className="bg-muted py-16 md:py-24">
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl">
-              Sobre a Farmácia FarmaVida
+              {config.about.title}
             </h2>
             
             <div className="space-y-4 text-lg text-muted-foreground">
-              <p>
-                A FarmaVida é sua parceira de confiança quando o assunto é saúde e bem-estar. 
-                Com mais de duas décadas de experiência, oferecemos um atendimento humanizado 
-                e personalizado para cada cliente.
-              </p>
-              
-              <p>
-                Nossa equipe de farmacêuticos qualificados está sempre pronta para orientar 
-                sobre o uso correto de medicamentos e indicar os melhores produtos para suas 
-                necessidades. Trabalhamos apenas com fornecedores certificados, garantindo 
-                a procedência e qualidade de todos os itens disponíveis.
-              </p>
-              
-              <p>
-                Acreditamos que saúde vai além de medicamentos. Por isso, oferecemos uma 
-                linha completa de produtos de cuidados pessoais, suplementos vitamínicos e 
-                serviços especializados para cuidar de você e sua família.
-              </p>
+              {config.about.paragraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
           

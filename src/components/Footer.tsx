@@ -1,6 +1,11 @@
 import { Pill, Facebook, Instagram, Linkedin } from "lucide-react";
+import { useSiteConfig } from "@/hooks/useSiteConfig";
 
 const Footer = () => {
+  const { config } = useSiteConfig();
+  
+  if (!config) return null;
+  
   return (
     <footer className="border-t bg-muted">
       <div className="container py-12">
@@ -10,11 +15,10 @@ const Footer = () => {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                 <Pill className="h-6 w-6 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold text-primary">FarmaVida</span>
+              <span className="text-xl font-bold text-primary">{config.site.name}</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Sua saúde é nossa prioridade. Oferecemos medicamentos de qualidade, 
-              atendimento especializado e produtos para o bem-estar de toda família.
+              {config.site.description}
             </p>
           </div>
           
@@ -72,8 +76,21 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>© 2024 FarmaVida. Todos os direitos reservados.</p>
+        <div className="mt-8 border-t pt-8">
+          <div className="text-center text-sm text-muted-foreground">
+            <p>{config.footer.copyright}</p>
+            <div className="mt-2 flex justify-center gap-4">
+              {config.footer.links.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  className="hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </footer>

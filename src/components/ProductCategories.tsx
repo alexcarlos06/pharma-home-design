@@ -1,28 +1,20 @@
-import { Pill, Heart, Sparkles } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
+import { useSiteConfig } from "@/hooks/useSiteConfig";
+import medicinesImg from "@/assets/medicines-category.jpg";
+import personalCareImg from "@/assets/personal-care-category.jpg";
+import vitaminsImg from "@/assets/vitamins-category.jpg";
 
-const categories = [
-  {
-    icon: Pill,
-    title: "Medicamentos",
-    description: "Ampla variedade de medicamentos com e sem prescrição médica",
-    color: "bg-primary/10 text-primary"
-  },
-  {
-    icon: Heart,
-    title: "Cuidados Pessoais",
-    description: "Produtos de higiene, beleza e bem-estar para toda família",
-    color: "bg-accent/10 text-accent"
-  },
-  {
-    icon: Sparkles,
-    title: "Vitaminas",
-    description: "Suplementos e vitaminas para fortalecer sua saúde",
-    color: "bg-secondary/10 text-secondary"
-  }
-];
+const imageMap: Record<string, string> = {
+  "/src/assets/medicines-category.jpg": medicinesImg,
+  "/src/assets/personal-care-category.jpg": personalCareImg,
+  "/src/assets/vitamins-category.jpg": vitaminsImg,
+};
 
 const ProductCategories = () => {
+  const { config } = useSiteConfig();
+  
+  if (!config) return null;
+
   return (
     <section id="produtos" className="py-16 md:py-24">
       <div className="container">
@@ -36,29 +28,29 @@ const ProductCategories = () => {
         </div>
         
         <div className="grid gap-8 md:grid-cols-3">
-          {categories.map((category, index) => {
-            const Icon = category.icon;
-            return (
-              <Card 
-                key={index}
-                className="group cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1"
-              >
-                <CardContent className="p-8 text-center">
-                  <div className={`mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl ${category.color}`}>
-                    <Icon className="h-8 w-8" />
-                  </div>
-                  
-                  <h3 className="mb-3 text-xl font-semibold text-foreground">
-                    {category.title}
-                  </h3>
-                  
-                  <p className="text-muted-foreground">
-                    {category.description}
-                  </p>
-                </CardContent>
-              </Card>
-            );
-          })}
+          {config.categories.map((category) => (
+            <Card 
+              key={category.id}
+              className="group cursor-pointer overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1"
+            >
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src={imageMap[category.image] || category.image}
+                  alt={category.title}
+                  className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                />
+              </div>
+              <CardContent className="p-6 text-center">
+                <h3 className="mb-3 text-xl font-semibold text-foreground">
+                  {category.title}
+                </h3>
+                
+                <p className="text-muted-foreground">
+                  {category.description}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
