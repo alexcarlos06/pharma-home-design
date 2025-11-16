@@ -1,0 +1,67 @@
+{
+  "site": {
+    "name": "FarmaVida",
+    "tagline": "Sua Saúde, Nossa Prioridade",
+    "description": "Descontos especiais em medicamentos, vitaminas e produtos de cuidados pessoais. Qualidade e confiança para toda sua família."
+  },
+  "colors": {
+    "primary": "210 90% 48%",
+    "secondary": "142 76% 36%",
+    "accent": "173 80% 40%"
+  },
+  "images": {
+    "hero": "/src/assets/pharmacy-hero.jpg",
+    "store": "/src/assets/pharmacy-store.jpg"
+  },
+  "hero": {
+    "badge": "Promoções Especiais",
+    "title": "Sua Saúde, Nossa Prioridade",
+    "description": "Descontos especiais em medicamentos, vitaminas e produtos de cuidados pessoais. Qualidade e confiança para toda sua família.",
+    "primaryButton": "Ver Promoções",
+    "secondaryButton": "Nossas Lojas"
+  },
+  "categories": [
+    {
+      "id": "medicines",
+      "title": "Medicamentos",
+      "description": "Ampla variedade de medicamentos com e sem prescrição",
+      "image": "/src/assets/medicines-category.jpg",
+      "color": "bg-blue-50"
+    },
+    {
+      "id": "personal-care",
+      "title": "Cuidados Pessoais",
+      "description": "Produtos de higiene e beleza para toda família",
+      "image": "/src/assets/personal-care-category.jpg",
+      "color": "bg-green-50"
+    },
+    {
+      "id": "vitamins",
+      "title": "Vitaminas",
+      "description": "Suplementos e vitaminas para seu bem-estar",
+      "image": "/src/assets/vitamins-category.jpg",
+      "color": "bg-accent/10"
+    }
+  ],
+  "about": {
+    "title": "Sobre a FarmaVida",
+    "paragraphs": [
+      "Há mais de 20 anos cuidando da saúde e bem-estar da sua família. Nossa farmácia combina tradição com modernidade, oferecendo produtos de qualidade e atendimento personalizado.",
+      "Contamos com uma equipe de farmacêuticos qualificados, prontos para orientar sobre o uso correto de medicamentos e esclarecer suas dúvidas. Seu bem-estar é nossa missão."
+    ]
+  },
+  "contact": {
+    "phone": "(11) 3456-7890",
+    "address": "Rua da Saúde, 123 - Centro, São Paulo - SP",
+    "hours": "Seg-Sex: 8h às 22h | Sáb-Dom: 9h às 18h",
+    "email": "contato@farmavida.com.br"
+  },
+  "footer": {
+    "copyright": "2024 FarmaVida. Todos os direitos reservados.",
+    "links": [
+      { "label": "Política de Privacidade", "href": "#" },
+      { "label": "Termos de Uso", "href": "#" },
+      { "label": "Trabalhe Conosco", "href": "#" }
+    ]
+  }
+}

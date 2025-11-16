@@ -1,28 +1,33 @@
 import { Phone, MapPin, Clock } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
-
-const contactInfo = [
-  {
-    icon: Phone,
-    title: "Telefone",
-    content: "(11) 3456-7890",
-    subContent: "Atendimento via WhatsApp"
-  },
-  {
-    icon: MapPin,
-    title: "Endereço",
-    content: "Av. Saúde, 1234 - Centro",
-    subContent: "São Paulo - SP"
-  },
-  {
-    icon: Clock,
-    title: "Horário",
-    content: "Seg a Sáb: 8h às 22h",
-    subContent: "Domingo: 9h às 18h"
-  }
-];
+import { useSiteConfig } from "@/hooks/useSiteConfig";
 
 const Contact = () => {
+  const { config } = useSiteConfig();
+  
+  if (!config) return null;
+
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Telefone",
+      content: config.contact.phone,
+      subContent: config.contact.email
+    },
+    {
+      icon: MapPin,
+      title: "Endereço",
+      content: config.contact.address,
+      subContent: "Fácil acesso e estacionamento"
+    },
+    {
+      icon: Clock,
+      title: "Horário",
+      content: config.contact.hours,
+      subContent: "Plantão 24h disponível"
+    }
+  ];
+
   return (
     <section id="contato" className="py-16 md:py-24">
       <div className="container">
