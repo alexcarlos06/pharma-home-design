@@ -54,14 +54,22 @@
     "phone": "(11) 3456-7890",
     "address": "Rua da Saúde, 123 - Centro, São Paulo - SP",
     "hours": "Seg-Sex: 8h às 22h | Sáb-Dom: 9h às 18h",
-    "email": "contato@farmavida.com.br"
+    "email": "contato@farmavida.com.br",
+    "photo": "/me.jpg",
+    "linkedin": "https://www.linkedin.com/in/alexcsousa/"
   },
   "footer": {
-    "copyright": "2024 FarmaVida. Todos os direitos reservados.",
+    "copyright": "2025 FarmaVida. Todos os direitos reservados.",
     "links": [
       { "label": "Política de Privacidade", "href": "#" },
       { "label": "Termos de Uso", "href": "#" },
       { "label": "Trabalhe Conosco", "href": "#" }
     ]
   }
+  ,
+  "social": [
+    { "name": "facebook", "href": "https://www.facebook.com" },
+    { "name": "instagram", "href": "https://www.instagram.com" },
+    { "name": "linkedin", "href": "https://www.linkedin.com/in/alexcsousa/" }
+  ]
 }

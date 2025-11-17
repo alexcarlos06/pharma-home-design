@@ -5,6 +5,7 @@ export interface SiteConfig {
     name: string;
     tagline: string;
     description: string;
+    logo?: string;
   };
   colors: {
     primary: string;
@@ -38,6 +39,8 @@ export interface SiteConfig {
     address: string;
     hours: string;
     email: string;
+    photo?: string;
+    linkedin?: string;
   };
   footer: {
     copyright: string;
@@ -46,6 +49,10 @@ export interface SiteConfig {
       href: string;
     }>;
   };
+  social?: Array<{
+    name: string;
+    href: string;
+  }>;
 }
 
 export const useSiteConfig = () => {

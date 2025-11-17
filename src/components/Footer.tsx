@@ -51,27 +51,60 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 text-sm font-semibold text-foreground">Redes Sociais</h3>
             <div className="flex gap-3">
-              <a 
-                href="#" 
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a 
-                href="#" 
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a 
-                href="#" 
-                className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
+              {config.social && config.social.length > 0 ? (
+                config.social.map((s, i) => {
+                  const name = s.name?.toLowerCase?.() || "";
+                  const renderIcon = () => {
+                    switch (name) {
+                      case "facebook":
+                        return <Facebook className="h-5 w-5" />;
+                      case "instagram":
+                        return <Instagram className="h-5 w-5" />;
+                      case "linkedin":
+                        return <Linkedin className="h-5 w-5" />;
+                      default:
+                        return <span className="h-5 w-5" />;
+                    }
+                  };
+
+                  return (
+                    <a
+                      key={i}
+                      href={s.href || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                      aria-label={s.name}
+                    >
+                      {renderIcon()}
+                    </a>
+                  );
+                })
+              ) : (
+                <>
+                  <a
+                    href="#"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </>
+              )}
             </div>
           </div>
         </div>

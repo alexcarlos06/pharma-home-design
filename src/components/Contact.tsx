@@ -32,6 +32,25 @@ const Contact = () => {
     <section id="contato" className="py-16 md:py-24">
       <div className="container">
         <div className="mb-12 text-center">
+          {config.contact.photo && (
+            <div className="flex justify-center mb-6">
+              {config.contact.linkedin ? (
+                <a href={config.contact.linkedin} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={config.contact.photo}
+                    alt={`Foto de contato ${config.site.name}`}
+                    className="h-32 w-32 rounded-full object-cover border-4 border-primary/10"
+                  />
+                </a>
+              ) : (
+                <img
+                  src={config.contact.photo}
+                  alt={`Foto de contato ${config.site.name}`}
+                  className="h-32 w-32 rounded-full object-cover border-4 border-primary/10"
+                />
+              )}
+            </div>
+          )}
           <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
             Entre em Contato
           </h2>

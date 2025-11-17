@@ -37,7 +37,7 @@ const Hero = () => {
             <Button size="lg" variant="secondary" className="w-full sm:w-auto">
               {config.hero.primaryButton}
             </Button>
-            <Button size="lg" variant="outline" className="w-full border-white text-white hover:bg-white hover:text-primary sm:w-auto">
+            <Button size="lg" variant="secondary" className="w-full sm:w-auto">
               {config.hero.secondaryButton}
             </Button>
           </div>
