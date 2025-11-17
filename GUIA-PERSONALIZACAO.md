@@ -74,16 +74,16 @@ Procure esta seção:
 Procure a seção de imagens:
 ```json
 "images": {
-  "hero": "/src/assets/pharmacy-hero.jpg",
-  "store": "/src/assets/pharmacy-store.jpg"
+  "hero": "pharmacy-hero.jpg",
+  "store": "pharmacy-store.jpg"
 }
 ```
 
 Mude para o nome da sua imagem:
 ```json
 "images": {
-  "hero": "/src/assets/minha-farmacia.jpg",
-  "store": "/src/assets/minha-loja.jpg"
+  "hero": "minha-farmacia.jpg",
+  "store": "minha-loja.jpg"
 }
 ```
 
@@ -121,7 +121,7 @@ Você pode mudar os títulos e descrições das categorias:
     "id": "medicines",
     "title": "Medicamentos",
     "description": "Ampla variedade de medicamentos com e sem prescrição",
-    "image": "/src/assets/medicines-category.jpg"
+    "image": "medicines-category.jpg"
   }
 ]
 ```
@@ -133,7 +133,7 @@ Altere o "title" e "description" para o que quiser:
     "id": "medicines",
     "title": "Remédios",
     "description": "Todos os medicamentos que você precisa",
-    "image": "/src/assets/remedios.jpg"
+    "image": "remedios.jpg"
   }
 ]
 ```
@@ -188,7 +188,7 @@ Mude os textos para contar a história da sua farmácia:
 ### A imagem não aparece
 - Verifique se você colocou a imagem na pasta `src/assets/`
 - Verifique se o nome no JSON é exatamente igual ao nome do arquivo
-- Lembre-se de incluir `/src/assets/` antes do nome
+- Lembre-se de colocar a imagem na pasta `src/assets/` e usar apenas o nome do arquivo no JSON
 
 ## 💡 Dicas Finais
 

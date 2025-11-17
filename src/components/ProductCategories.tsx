@@ -5,9 +5,9 @@ import personalCareImg from "@/assets/personal-care-category.jpg";
 import vitaminsImg from "@/assets/vitamins-category.jpg";
 
 const imageMap: Record<string, string> = {
-  "/src/assets/medicines-category.jpg": medicinesImg,
-  "/src/assets/personal-care-category.jpg": personalCareImg,
-  "/src/assets/vitamins-category.jpg": vitaminsImg,
+  "medicines-category.jpg": medicinesImg,
+  "personal-care-category.jpg": personalCareImg,
+  "vitamins-category.jpg": vitaminsImg,
 };
 
 const ProductCategories = () => {
@@ -35,7 +35,10 @@ const ProductCategories = () => {
             >
               <div className="aspect-square overflow-hidden">
                 <img
-                  src={imageMap[category.image] || category.image}
+                  src={
+                    // normalize values coming from site-config.json
+                    imageMap[category.image.replace(/^\/?src\/?assets\//, "")] || imageMap[category.image] || category.image
+                  }
                   alt={category.title}
                   className="h-full w-full object-cover transition-transform group-hover:scale-105"
                 />

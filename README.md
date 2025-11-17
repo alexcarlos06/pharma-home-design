@@ -36,8 +36,8 @@ Todas as configurações do site estão no arquivo `public/site-config.json`. Vo
 #### 🖼️ Imagens
 ```json
 "images": {
-  "hero": "/src/assets/pharmacy-hero.jpg",
-  "store": "/src/assets/pharmacy-store.jpg"
+  "hero": "src/assets/pharmacy-hero.jpg",
+  "store": "src/assets/pharmacy-store.jpg"
 }
 ```
 
@@ -53,7 +53,7 @@ Para trocar imagens:
     "id": "medicines",
     "title": "Medicamentos",
     "description": "Sua descrição aqui",
-    "image": "/src/assets/medicines-category.jpg",
+    "image": "medicines-category.jpg",
     "color": "bg-blue-50"
   }
 ]

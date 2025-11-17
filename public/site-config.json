@@ -10,8 +10,8 @@
     "accent": "173 80% 40%"
   },
   "images": {
-    "hero": "/src/assets/pharmacy-hero.jpg",
-    "store": "/src/assets/pharmacy-store.jpg"
+    "hero": "pharmacy-hero.jpg",
+    "store": "pharmacy-store.jpg"
   },
   "hero": {
     "badge": "Promoções Especiais",
@@ -25,21 +25,21 @@
       "id": "medicines",
       "title": "Medicamentos",
       "description": "Ampla variedade de medicamentos com e sem prescrição",
-      "image": "/src/assets/medicines-category.jpg",
+      "image": "medicines-category.jpg",
       "color": "bg-blue-50"
     },
     {
       "id": "personal-care",
       "title": "Cuidados Pessoais",
       "description": "Produtos de higiene e beleza para toda família",
-      "image": "/src/assets/personal-care-category.jpg",
+      "image": "personal-care-category.jpg",
       "color": "bg-green-50"
     },
     {
       "id": "vitamins",
       "title": "Vitaminas",
       "description": "Suplementos e vitaminas para seu bem-estar",
-      "image": "/src/assets/vitamins-category.jpg",
+      "image": "vitamins-category.jpg",
       "color": "bg-accent/10"
     }
   ],
